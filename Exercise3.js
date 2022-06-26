@@ -4,13 +4,11 @@ qc.write(0);
 qc.nop();
 qc.label('Multiple de 4')
 
-qc.had(11100);
+qc.had(0x2B5C);
 
-var value = qc.read();
-qc.print(value + '\n')
 qc.label('resultat');
+qc.cnot(0x10, 0x4 | 0x8);
+qc.cnot(0x8,0x4);
+qc.not(0x4);
 
-var x = qint.new(5, 'x');
-x.add(4);
-var final = qc.read();
-qc.print(final + '\n');
+qc.print(qc.read() + '\n')
