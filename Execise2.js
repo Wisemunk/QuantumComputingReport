@@ -1,3 +1,5 @@
+// Code taken from Programming Quantum computers BOOK
+
 qc.reset(3);
 qc.discard();
 var a = qint.new(1, 'alice');
